@@ -22,8 +22,9 @@ Name = "${local.env}-subnet"
 resource "aws_instance" "three" {
 subnet_id = aws_subnet.two.id
 ami = "ami-0ddc798b3f1a5117e"
-instance_type = "t2.micro"
+count = var.instance_count
+instance_type = var.instance_type
 tags = {
-Name = "${local.env}-server"
+Name = var.instance_name
 }
 }

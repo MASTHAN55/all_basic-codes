@@ -19,6 +19,9 @@ tags = {
 Name = var.instance_name
 }
 }
+output "masthan" {
+value = [aws_instance.one]
+}
 ---------------------------------------------------------------------------------------------------------------------------------
 ## vim variable.tf
 variable "instance_type" {

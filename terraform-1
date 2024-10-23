@@ -5,6 +5,7 @@ terraform applay -auto-approve   // for all
 terraform fmt  //create structor
 terraform plan -var-file="dev.tfvars"
 terraform apply -var-file="dev.tfvars" -auto-approve
+terraform apply --auto-approve -replace="aws_instance.one[0]"
 -------------------------------------------------------------------------------------------------------------------
 ## vim main.tf         
 provider "aws" {

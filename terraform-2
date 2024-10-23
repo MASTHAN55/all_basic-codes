@@ -1,3 +1,4 @@
+## terraform workspace new test     //creating workspace
 provider "aws" {
 region = "us-east-1"
 }

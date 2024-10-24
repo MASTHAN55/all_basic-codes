@@ -13,7 +13,13 @@ Name = "${local.env}-vpc"
 }
 }
 
-resource "aws_subnet" "two" {
+resource "aws_s3_bucket" "two" {
+tags = {
+Name = "${local.env}"
+}
+}
+
+resource "aws_subnet" "three" {
 cidr_block = "10.0.0.0/25"
 vpc_id = aws_vpc.one.id
 tags = {
@@ -21,7 +27,7 @@ Name = "${local.env}-subnet"
 }
 }
 
-resource "aws_instance" "three" {
+resource "aws_instance" "four" {
 subnet_id = aws_subnet.two.id
 ami = "ami-0ddc798b3f1a5117e"
 count = var.instance_count

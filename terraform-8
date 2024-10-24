@@ -9,7 +9,7 @@ tags = {
 Name = "abcd"
 }
 lifecycle {
-create_before_destroy = true
-ignore_changes = all
+create_before_destroy = true    // first create server after destroy the server. 
+ignore_changes = all            // will not take any changes after created the server. 
 }
 }

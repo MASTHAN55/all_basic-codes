@@ -1,0 +1,12 @@
+provider "aws" {
+region = "ap-south-1"
+}
+
+resource "aws_instance" "one" {
+for_each = toset(["dev-server", "test-server", "pod-server"])
+ami = "ami-0e0e417dfa2028266"
+instance_type = "t2.micro"
+tags = {
+Name = "${each.key}"
+}
+}

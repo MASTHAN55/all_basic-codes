@@ -19,3 +19,6 @@ default = ["t2.micro", "t2.medium", "t2.large"]
 variable "instance_name" {
 default = ["dev-server", "test-server", "pod-server"]
 }
+variable "ami_id" {
+default = ["ami-redhat", "ami-ubuntu", "ami-amazonlinux"]
+}

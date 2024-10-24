@@ -22,7 +22,7 @@ Name = "${local.env}-subnet"
 }
 }
 
-terraform {
+terraform {                           // backup the code
   backend "s3" {
     bucket = "vali555"
     key    = "path/to/my/key"

@@ -1,0 +1,26 @@
+provider "aws" {
+region = "ap-south-1"
+}
+
+resource "aws_instance" "one" {
+ami = "ami-0e0e417dfa2028266"
+instance_type = "t2.micro"
+tags = {
+Name = "dev-server"
+}
+}
+
+provider "aws" {
+region = "us-east-1"
+alias = "masthan"
+}
+
+resource "aws_instance" "two" {
+provider = aws.masthan
+ami = "ami-06b21ccaeff8cd686"
+instance_type = "t2.micro"
+tags = {
+Name = "test-server"
+}
+}
+

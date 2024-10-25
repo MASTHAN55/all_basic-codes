@@ -9,7 +9,7 @@ tags = {
 Name = "dev-server"
 }
 
-depends_on = [
+depends_on = [                         // first create bucket then after create server.
 aws_s3_bucket.two
 ]
 }

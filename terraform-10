@@ -12,12 +12,12 @@ Name = "dev-server"
 
 provider "aws" {
 region = "us-east-1"
-alias = "masthan"
+alias = "masthan"                           // create servers in differnet regians. 
 }
 
 resource "aws_instance" "two" {
 provider = aws.masthan
-ami = "ami-06b21ccaeff8cd686"
+ami = "ami-06b21ccaeff8cd686"               //first create server in us-east-1 and copy AMI_id.
 instance_type = "t2.micro"
 tags = {
 Name = "test-server"

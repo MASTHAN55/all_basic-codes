@@ -10,6 +10,6 @@ Name = "masthan-server"
 }
 
 lifecycle {
-prevent_seatroy = true                  // cont delete server. 
+prevent_deatroy = true                  // cont delete server. 
 }
 }

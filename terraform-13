@@ -5,24 +5,25 @@ region = "us-east-1"
 resource "aws_instance" "one" {
 ami = "ami-0ddc798b3f1a5117e"
 instance_type = "t2.micro"
-key_name = "n"
-vpc_security_group_ids = ["sg-0536ec94332b801ee"]
+key_name = "n"                                            // key pair name.
+vpc_security_group_ids = ["sg-0536ec94332b801ee"]         // take all trafic security group.       
 tags = {
-Name = "masthan-server"
+Name = "masthan-server"                                   // creating server name.
 }
 
-provisioner "remote-exec" {
-inline = [
+provisioner "remote-exec" {                                  
+inline = [                                  
 "sudo yum update -y",
 "sudo yum install git maven tree httpd -y",
 "touch file1"
 ]
 
-connection {
+// connection used for connecting to new remote server. 
+connection {          
 type = "ssh"
 user = "ec2-user"
-private_key = file("~/.ssh/id_rsa")
-host = self.public_ip
+private_key = file("~/.ssh/id_rsa")                      // copy and paste ".pem" file in the path.
+host = self.public_ip                                    // 
 }
 }
 }

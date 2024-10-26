@@ -27,3 +27,5 @@ host = self.public_ip                                    //
 }
 }
 }
+
+// NOTE : by default remote provisioner runs commands on ec2-user.

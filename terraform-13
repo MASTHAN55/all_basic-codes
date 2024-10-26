@@ -2,12 +2,12 @@ provider "aws" {
 region = "us-east-1"
 }
 
-resource "aws_instance" "one" {
-ami = "ami-0ddc798b3f1a5117e"
-instance_type = "t2.micro"
-key_name = "n"                                            // key pair name from server.
-vpc_security_group_ids = ["sg-0536ec94332b801ee"]         // take all trafic security group from server.       
-tags = {
+resource "aws_instance" "one" {                                                                                              ----- NOTE-----
+ami = "ami-0ddc798b3f1a5117e"                                                                                                     1. name.
+instance_type = "t2.micro"                                                                                                        2. ami.
+key_name = "n"                                            // key pair name from server.                                           3. type
+vpc_security_group_ids = ["sg-0536ec94332b801ee"]         // take all trafic security group from server.                          4. key pair.
+tags = {                                                                                                                          5. networking.
 Name = "masthan-server"                                   // creating new server name.
 }
 

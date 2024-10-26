@@ -18,11 +18,11 @@ inline = [
 "touch file1"
 ]
 
-// connection used for connecting to new remote server. 
-connection {          
-type = "ssh"
-user = "ec2-user"
-private_key = file("~/.ssh/id_rsa")                      // copy and paste ".pem" file in the path.
+// connection used for connecting to new remote server.                                                                              ----- NOTE -----
+connection {                                                                                                                              1. shh. 
+type = "ssh"                                                                                                                              2. key pair.
+user = "ec2-user"                                                                                                                         3. ec2-user.
+private_key = file("~/.ssh/id_rsa")                      // copy and paste ".pem" file in the path.                                       4. public_ip (or) dns.
 host = self.public_ip                                    // 
 }
 }

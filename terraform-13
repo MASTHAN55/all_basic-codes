@@ -8,7 +8,7 @@ instance_type = "t2.micro"
 key_name = "n"                                            // key pair name.
 vpc_security_group_ids = ["sg-0536ec94332b801ee"]         // take all trafic security group.       
 tags = {
-Name = "masthan-server"                                   // creating server name.
+Name = "masthan-server"                                   // creating new server name.
 }
 
 provisioner "remote-exec" {                                  

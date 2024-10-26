@@ -1,0 +1,10 @@
+provider "github" {
+token = "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"
+}
+
+resource "github_repository" "one" {
+  name        = "example5551"
+  description = "g"
+
+  visibility = "public"
+  }

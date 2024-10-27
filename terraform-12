@@ -1,4 +1,4 @@
-provider "local" {
+provider "local" {               // creating local 
 }
 
 resource "local_file" "one" {

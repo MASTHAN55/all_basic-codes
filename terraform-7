@@ -1,4 +1,4 @@
-provider "aws" {                       // same environment with different cinfigrations. 
+provider "aws" {                       // different servers with different configurations.
 region = "ap-south-1"
 }
 

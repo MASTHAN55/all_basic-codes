@@ -1,4 +1,4 @@
-provider "github" {
+provider "github" {                                  // creating github using terraform
 token = "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"
 }
 

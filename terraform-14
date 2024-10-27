@@ -1,7 +1,7 @@
 provider "aws" {
   region = "us-east-1"
 }
-
+                                        // importing data server to terraform. 
 import {
   to = aws_instance.two                // please give "server-wised number" EXAMPLE- to = "aws_instance.two or three" 
   id = "i-06b75dd7f714a998a"           // import server_id.

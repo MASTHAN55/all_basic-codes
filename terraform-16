@@ -12,6 +12,7 @@ instance_type = "t2.micro"
 resource "aws_s3_bucket" "four" {
 bucket = "masthan5858"
 }
+
 ## vim main.tf
 provider "aws" {
 region = "us-east-1"

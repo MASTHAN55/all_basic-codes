@@ -20,5 +20,5 @@ variable "instance_name" {
 default = ["dev-server", "test-server", "pod-server"]
 }
 variable "var.instance_ami" {
-default = ["ami-036c2987dfef867fb", "ami-0cd60fd97301e4b49", "ami-0324a83b82023f0b3"]
+default = ["ami-036c2987dfef867fb", "ami-0cd60fd97301e4b49", "ami-0324a83b82023f0b3"]           // redhat, windows, susilinux 
 }

@@ -1,1 +1,37 @@
+provider "aws" {
+region = "ue-east-1"
+}
+
+locals {
+ingress_rules = [{
+port = 443
+},
+}
+port = 80
+},
+{
+port = 8080
+}]
+}
+
+resource "aws_instance" "one" {
+ami = "ami-0ddc798b3f1a5117e"
+instance_type = "t2.micro"
+}
+
+dynamic "ingress" {
+for_each = local.ingress_rules
+
+content {
+from_port = ingress.value.port
+to_port = ingress.value.port
+protocol = "tcp"
+cidr_blocks = ["0.0.0.0/0"]
+}
+}
+
+tags = {
+Name = "terra sg"
+}
+}
 

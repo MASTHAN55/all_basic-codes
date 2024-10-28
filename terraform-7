@@ -17,8 +17,10 @@ default = ["t2.micro", "t2.medium", "t2.large"]
 }
 
 variable "instance_name" {
-default = ["dev-server", "test-server", "pod-server"]
+default = ["dev-server", "test-server", "prod-server"]
 }
 variable "instance_ami" {
-default = ["ami-036c2987dfef867fb", "ami-0cd60fd97301e4b49", "ami-0324a83b82023f0b3"]           // redhat, windows, susilinux 
+default = ["ami-0583d8c7a9c35822c", "ami-0cd60fd97301e4b49", "ami-0324a83b82023f0b3"]            
+          
+          //red-hat (dev-server)   //susi-linux (test-server) //windows (prod-server)
 }

@@ -7,6 +7,6 @@ for_each = toset(["dev-server", "test-server", "pod-server"])
 ami = "ami-0e0e417dfa2028266"
 instance_type = "t2.micro"
 tags = {
-Name = "${each.key}"          // create different servers different names.
+Name = "${each.key}"          // create different servers with "same" configurations.
 }
 }

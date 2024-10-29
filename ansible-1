@@ -1,0 +1,17 @@
+- hosts: all
+  tasks:
+    - name: installing git
+      yum: name=git state=present
+
+    - name: installing https
+      yum: name=httpd state=present
+
+    - name: starting httpd
+      service: name=httpd state=started
+
+    - name: create user
+      user: name=masthan state=present
+
+    - name: copying a file
+      copy: src=index.html dest=/root
+

@@ -1,0 +1,21 @@
+- hosts: all
+  tasks:
+    - name: installing httpd
+      yum: name=httpd state=present
+      tags: a
+
+    - name: starting httpd
+      service: name=httpd state=started
+      tags: b
+
+    - name: copying a file
+      copy: src=index.html dest=/root
+      tags: c
+
+    - name: create user
+      user: name=shaik state=present
+      tags: d
+
+    - name: installing mamven
+      yum: name=maven state=present
+      tags: e

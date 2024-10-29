@@ -1,4 +1,5 @@
 - hosts: all
+ignore_errors: yes
   tasks:
     - name: installing httpd
       yum: name=httpd state=present

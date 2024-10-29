@@ -1,12 +1,15 @@
 - hosts: all
 ignore_errors: yes
+vars:
+a: git
+b: httpd
   tasks:
-    - name: installing httpd
-      yum: name=httpd state=present
+    - name: installing git
+      yum: name={{a}} state=present
       tags: a
 
-    - name: starting httpd
-      service: name=httpd state=started
+    - name: installing httpd
+      service: name={{b}} state=present
       tags: b
 
     - name: copying a file

@@ -9,3 +9,41 @@
     - name: installing apache
       apt: name=apache2 state=present
       when: ansible_os_family == "Ubuntu"
+--------------------------------------------------------------------------------
+- hosts: all
+  connection: ssh
+
+  tasks:
+    - name: create a file
+      file:
+        path: "/root/ccit"
+        state: touch
+---------------------------------------------------------------------------
+- hosts: all
+connection: ssh
+
+tasks:
+- name: create folder
+file:
+path: "/root/masthn"
+state: directory
+---------------------------------------------------------------------------
+- hosts: all
+  connection: ssh
+
+  tasks:
+    - name: add a user
+      user: name=masthan state=present
+
+    - name: add a group
+      group: name=shaik state=present
+
+    - name: create a file in a slave-server
+      file:
+        path: "/root/hello-server"
+        state: touch
+        mode: 777
+        owner: masthan
+        group: shaik
+
+

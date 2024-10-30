@@ -1,0 +1,32 @@
+cat pkgs/tasks/main.yml
+
+    - name: installing packages
+      yum: name={{item}} state=present
+      with_items:
+        - git
+        - maven
+        - docker
+        - tree
+
+cat users/tasks/main.yml
+- name: create users
+  user: name={{item}} state=present
+  with_items:
+      - masthan
+      - srinu
+      - baji
+      - vali
+
+cat webserver/tasks/main.yml
+- name: installing webserver
+  yum: name=httpd state=present
+
+- name: start  httpd
+  service: name=httpd state=started
+
+cat vali.yml
+- hosts: all
+  roles:
+    - pkgs
+
+

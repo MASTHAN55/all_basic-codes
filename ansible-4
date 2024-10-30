@@ -52,7 +52,7 @@ state: directory
     - name: installing httpd
       yum: name=httpd state=present
       notify: starting httpd                          // notify the 
-  handlers:
+  handlers:                                           // dependency
     - name: starting httpd    
       service: name=httpd state=started
 

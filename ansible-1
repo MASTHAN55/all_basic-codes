@@ -15,3 +15,4 @@
     - name: copying a file
       copy: src=index.html dest=/root
 
+

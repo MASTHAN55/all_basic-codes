@@ -1,4 +1,42 @@
-                                                         [Deployment]
+                                                                    [Deployment]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movies
+  labels:
+    app: paytm
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: paytm
+  template:
+    metadata:
+      labels:
+        app: paytm
+    spec:
+      containers:
+        - name: cont1
+          image: rahamshaik/paytmmoviesss:latest
+
+
+To list deployment	:kubectl get deploy
+To show addtional info	:kubectl get deploy -o wide
+To show complete info	:kubectl describe deploy name-of-deployment
+To delete the deploy	:kubectl delete deploy name-of-deploy
+to get lables of pods 	:kubectl get pods -l app=paytm
+TO scale deploy		:kubectl scale deploy/name-of-deploy --replicas=10 (LIFO)
+To edit deploy		:kubectl edit deploy/name-of-deploy
+to show all pod labels	:kubectl get pods --show-labels
+To delete all pods	:kubectl delete pod --all
+
+kubectl rollout history deploy/movies
+kubectl rollout undo deploy/movies
+kubectl rollout status deploy/movies
+kubectl rollout pause deploy/movies
+kubectl rollout resume deploy/movies
+
+==============================================================================[REPLICASET]=================================================================================
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
@@ -78,4 +116,9 @@ kubectl get pods/pod/po
 kubectl get pod -o wide
 kubectl describe pod pod1
 kubectl delete -f raham.yml
+
+=============================================================================[CLUSTERIP]===================================================================================
+
+
+
 

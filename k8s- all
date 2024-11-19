@@ -1,3 +1,33 @@
+                                                         [Deployment]
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: movies
+  labels:
+    app: paytm
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: paytm
+  template:
+    metadata:
+      labels:
+        app: paytm
+    spec:
+      containers:
+        - name: cont1
+          image: rahamshaik/paytmmoviesss:latest
+
+To list rs	          	:kubectl get rs/replicaset
+To show addtional info	:kubectl get rs -o wide
+To show complete info 	:kubectl describe rs name-of-rs
+To delete the rs	      :kubectl delete rs name-of-rs
+to get lables of pods 	: kubectl get pods -l app=paytm
+TO scale rs		          : kubectl scale rs/movies --replicas=10 (LIFO)
+kubectl edit rs movies
+===========================================================================================================================================================================
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -31,3 +61,21 @@ spec:
   ports:
     - port: 80
       nodePort: 31111
+
+==========================================================================[POD]================================================================================================
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+spec:
+  containers:
+    - image: vinodvanama/paytmtrain:latest
+      name: cont1
+
+execution: 
+kubectl create -f pod.yml
+kubectl get pods/pod/po
+kubectl get pod -o wide
+kubectl describe pod pod1
+kubectl delete -f raham.yml
+

@@ -64,7 +64,7 @@ To delete the rs	      :kubectl delete rs name-of-rs
 to get lables of pods 	: kubectl get pods -l app=paytm
 TO scale rs		          : kubectl scale rs/movies --replicas=10 (LIFO)
 kubectl edit rs movies
-===========================================================================================================================================================================
+=================================================================================[NODEPORT]==========================================================================================
 
 apiVersion: apps/v1
 kind: Deployment

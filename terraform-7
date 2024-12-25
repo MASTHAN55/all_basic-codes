@@ -1,4 +1,4 @@
-provider "aws" {                       // different servers with different configurations.
+provider "aws" {                       // different servers with different configurations(iam).
 region = "ap-south-1"
 }
 

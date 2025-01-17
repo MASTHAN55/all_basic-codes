@@ -1,0 +1,14 @@
+handlers: used to execute when one task is depending on other.
+if task-1 is executed it will trigger task-2.
+if task-1 is not executed properly it wont trigger taks-2.
+notify indicate name of taks-2
+
+- hosts: all
+  tasks:
+    - name: installing httpd
+      yum: name=httpd state=present
+      notify: starting httpd
+  handlers:
+    - name: starting httpd
+      service: name=httpd state=started
+
